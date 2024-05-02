@@ -135,7 +135,13 @@ function Clients() {
   )
 }
 
-export default async function Template() {
+export const metadata: Metadata = {
+  title: 'Project Showcase',
+  description:
+    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+}
+
+export default async function ProjectShowcase() {
   let caseStudies = await loadCaseStudies()
 
   return (
