@@ -6,11 +6,13 @@ import { FadeIn } from '@/components/FadeIn'
 export function PageIntro({
   eyebrow,
   title,
+  description,
   children,
   centered = false,
 }: {
   eyebrow: string
   title: string
+  description: string
   children: React.ReactNode
   centered?: boolean
 }) {
