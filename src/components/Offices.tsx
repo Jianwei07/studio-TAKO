@@ -33,9 +33,7 @@ export function Offices({
     <ul role="list" {...props}>
       <li>
         <Office name="Singapore" invert={invert}>
-          93 Lor L Telok Kurau
           <br />
-          Singapore 425597
         </Office>
       </li>
       {/* <li>
