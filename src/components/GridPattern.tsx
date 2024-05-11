@@ -94,7 +94,7 @@ export function GridPattern({
       <rect width="100%" height="100%" fill={`url(#${id})`} strokeWidth="0" />
       <svg x="50%" y={yOffset} strokeWidth="0" className="overflow-visible">
         {staticBlocks.map((block) => (
-          <Block key={`${block}`} x={block[0]} y={block[1]} />
+          <Block key={`${block}`} x={block[0]} y={block[1]} fill='#2AB7CA'/>
         ))}
         {hoveredBlocks.map((block) => (
           <Block
@@ -104,10 +104,10 @@ export function GridPattern({
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 1, times: [0, 0, 1] }}
             onAnimationComplete={() => {
-              setHoveredBlocks((blocks) =>
-                blocks.filter((b) => b[2] !== block[2]),
-              )
+              setHoveredBlocks((blocks) => blocks.filter((b) => b[2] !== block[2]))
             }}
+            fill="#2AB7CA"
+            opacity='0.85'
           />
         ))}
       </svg>
