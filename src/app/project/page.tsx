@@ -1,102 +1,28 @@
+/* eslint-disable react/no-unescaped-entities */
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Blockquote } from '@/components/Blockquote'
-import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
+
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { PageIntro } from '@/components/PageIntro'
+import { List, ListItem } from '@/components/List'
+import { SectionIntro } from '@/components/SectionIntro'
+import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
-import { formatDate } from '@/lib/formatDate'
+import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
+import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
+import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
+import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
+import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
+import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
+import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
+import logoUnseal from '@/images/clients/unseal/logo-light.svg'
+import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
-function CaseStudies({
-  caseStudies,
-}: {
-  caseStudies: Array<MDXEntry<CaseStudy>>
-}) {
-  return (
-    <Container className="mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
-        </h2>
-      </FadeIn>
-      <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {caseStudies.map((caseStudy) => (
-          <FadeIn key={caseStudy.client}>
-            <article>
-              <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
-                <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
-                  <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
-                    <Image
-                      src={caseStudy.logo}
-                      alt=""
-                      className="h-16 w-16 flex-none"
-                      unoptimized
-                    />
-                    <h3 className="mt-6 text-sm font-semibold text-neutral-950 sm:mt-0 lg:mt-8">
-                      {caseStudy.client}
-                    </h3>
-                  </div>
-                  <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
-                    <p className="text-sm tracking-tight text-neutral-950 after:ml-4 after:font-semibold after:text-neutral-300 after:content-['/'] lg:mt-2 lg:after:hidden">
-                      {caseStudy.service}
-                    </p>
-                    <p className="text-sm text-neutral-950 lg:mt-2">
-                      <time dateTime={caseStudy.date}>
-                        {formatDate(caseStudy.date)}
-                      </time>
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
-                  <p className="font-display text-4xl font-medium text-neutral-950">
-                    <Link href={caseStudy.href}>{caseStudy.title}</Link>
-                  </p>
-                  <div className="mt-6 space-y-6 text-base text-neutral-600">
-                    {caseStudy.summary.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-                  <div className="mt-8 flex">
-                    <Button
-                      href={caseStudy.href}
-                      aria-label={`Read case study: ${caseStudy.client}`}
-                    >
-                      Read case study
-                    </Button>
-                  </div>
-                  {caseStudy.testimonial && (
-                    <Blockquote
-                      author={caseStudy.testimonial.author}
-                      className="mt-12"
-                    >
-                      {caseStudy.testimonial.content}
-                    </Blockquote>
-                  )}
-                </div>
-              </Border>
-            </article>
-          </FadeIn>
-        ))}
-      </div>
-    </Container>
-  )
-}
-
 const clients = [
-  ['Phobia', logoPhobia],
+  ['Phobia', logoPhobiaLight],
   ['Family Fund', logoFamilyFund],
   ['Unseal', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
@@ -108,106 +34,189 @@ const clients = [
 
 function Clients() {
   return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
-        <ul
-          role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
-        >
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
+    <div className="text-foreground mt-24 rounded-4xl bg-neutral-800 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+      <Container>
+        <FadeIn className="flex items-center gap-x-8">
+          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+            Businesses we've impacted
+          </h2>
+          <div className="h-px flex-auto bg-neutral-500" />
+        </FadeIn>
+        <FadeInStagger faster>
+          <ul
+            role="list"
+            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
+          >
+            {clients.map(([client, logo]) => (
+              <li key={client}>
+                <FadeIn>
                   <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
-            </li>
+                </FadeIn>
+              </li>
+            ))}
+          </ul>
+        </FadeInStagger>
+      </Container>
+    </div>
+  )
+}
+
+function CaseStudies({
+  caseStudies,
+}: {
+  caseStudies: Array<MDXEntry<CaseStudy>>
+}) {
+  return (
+    <>
+      <SectionIntro
+        title="Crafted for Creators and Entrepreneurs"
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+        <p>
+          At the intersection of innovation and practicality, we deliver web
+          solutions that transform the digital landscape for SMEs and
+          freelancers.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {caseStudies.map((caseStudy) => (
+            <FadeIn key={caseStudy.href} className="flex">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                <h3>
+                  <Link href={caseStudy.href}>
+                    <span className="absolute inset-0 rounded-3xl" />
+                    <Image
+                      src={caseStudy.logo}
+                      alt={caseStudy.client}
+                      className="h-16 w-16"
+                      unoptimized
+                    />
+                  </Link>
+                </h3>
+                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                  <time
+                    dateTime={caseStudy.date.split('-')[0]}
+                    className="font-semibold"
+                  >
+                    {caseStudy.date.split('-')[0]}
+                  </time>
+                  <span className="text-neutral-300" aria-hidden="true">
+                    /
+                  </span>
+                  <span>Case study</span>
+                </p>
+                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  {caseStudy.title}
+                </p>
+                <p className="mt-4 text-base text-neutral-600">
+                  {caseStudy.description}
+                </p>
+              </article>
+            </FadeIn>
           ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
+        </FadeInStagger>
+      </Container>
+    </>
+  )
+}
+
+function Services() {
+  return (
+    <>
+      <SectionIntro
+        eyebrow="Services"
+        title="Optimizing Your Online Impact"
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+        <p>
+          We're not just building websites; we're crafting the digital gateways
+          that connect your business to the world. Our services are designed to
+          boost your online presence and drive growth, all tailored to the
+          unique needs of creators and entrepreneurs.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <div className="lg:flex lg:items-center lg:justify-end">
+          <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
+            <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+              <StylizedImage
+                src={imageLaptop}
+                sizes="(min-width: 1024px) 41rem, 31rem"
+                className="justify-center lg:justify-end"
+              />
+            </FadeIn>
+          </div>
+          <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
+            <ListItem title="Web development">
+              We specialize in designing high-quality, visually stunning
+              marketing pages tailored to your brand's unique identity. Our
+              approach ensures that each website serves as a dynamic,
+              customizable platform ready to engage your audience.
+            </ListItem>
+            <ListItem title="Application development">
+              Our skilled team excels in creating robust applications using
+              advanced frameworks to deliver fully customizable and scalable
+              solutions. We focus on flexibility to ensure your app evolves with
+              your business needs.
+            </ListItem>
+            <ListItem title="E-commerce">
+              We empower your business with fully customizable e-commerce
+              solutions that adapt to your specific requirements. Enhance your
+              online store’s functionality and user experience to exceed sales
+              targets and grow your customer base.
+            </ListItem>
+            <ListItem title="Custom content management">
+              Understanding the critical role of adaptable content, we provide
+              powerful, customized content management systems (CMS) that
+              streamline content creation and distribution, ensuring your
+              message resonates with your audience.
+            </ListItem>
+          </List>
+        </div>
+      </Container>
+    </>
   )
 }
 
 export const metadata: Metadata = {
-  title: 'Project Showcase',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'We are a development studio working at the intersection of design and technology.',
 }
 
-export default async function ProjectShowcase() {
-  let caseStudies = await loadCaseStudies()
+export default async function Home() {
+  let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
     <>
-      <PageIntro
-        eyebrow="Project Showcase"
-        title="Proven solutions for real-world problems."
-      >
-        <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
-        </p>
-      </PageIntro>
-
-      <Container className="mt-40">
-        <FadeIn>
-          <h2 className="font-display text-2xl font-semibold text-neutral-950">
-            Case Studies
-          </h2>
+      <Container className="mt-24 sm:mt-32 md:mt-56">
+        <FadeIn className="max-w-3xl">
+          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+            Transforming Your Digital Presence.
+          </h1>
+          <p className="mt-6 text-xl text-neutral-600">
+            From dynamic e-commerce sites to professional freelancer portfolios,
+            our Singapore-based team empowers SMEs and freelancers with top-tier
+            web development services. Let us help you enhance and expand your
+            digital presence with solutions designed to grow with your business.
+          </p>
         </FadeIn>
-        <div className="mt-10 space-y-20">
-          {caseStudies.map((caseStudy) => (
-            <article key={caseStudy.client}>
-              <Border className="grid grid-cols-3 gap-8 pt-16">
-                <div className="col-span-1">
-                  <Image
-                    src={caseStudy.logo}
-                    alt=""
-                    width={64}
-                    height={64}
-                    unoptimized
-                  />
-                  <h3 className="mt-6 text-sm font-semibold">
-                    {caseStudy.client}
-                  </h3>
-                  <p className="text-sm">{caseStudy.service}</p>
-                  <time dateTime={caseStudy.date}>
-                    {formatDate(caseStudy.date)}
-                  </time>
-                </div>
-                <div className="col-span-2">
-                  <Link href={caseStudy.href}>
-                    <a className="font-display text-4xl font-medium">
-                      {caseStudy.title}
-                    </a>
-                  </Link>
-                  <div className="mt-6 space-y-6">
-                    {caseStudy.summary.map((paragraph, idx) => (
-                      <p key={idx}>{paragraph}</p>
-                    ))}
-                  </div>
-                  <Button href={caseStudy.href}>Read case study</Button>
-                  {caseStudy.testimonial && (
-                    <Blockquote author={caseStudy.testimonial.author}>
-                      {caseStudy.testimonial.content}
-                    </Blockquote>
-                  )}
-                </div>
-              </Border>
-            </article>
-          ))}
-        </div>
       </Container>
 
-      <Clients />
+      {/* <Clients /> */}
+
+      <CaseStudies caseStudies={caseStudies} />
+
+      {/* <Testimonial
+        className="mt-24 sm:mt-32 lg:mt-40"
+        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+      >
+        The team at Studio went above and beyond with our onboarding, even
+        finding a way to access the user’s microphone without triggering one of
+        those annoying permission dialogs.
+      </Testimonial> */}
+
+      <Services />
 
       <ContactSection />
     </>

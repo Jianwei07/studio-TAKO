@@ -67,114 +67,115 @@ function CaseStudies({
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
-    <>
-      <SectionIntro
-        title="Crafted for Creators and Entrepreneurs"
-        className="mt-24 sm:mt-32 lg:mt-40"
-      >
-        <p>
-          At the intersection of innovation and practicality, we deliver web
-          solutions that transform the digital landscape for SMEs and
-          freelancers.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+    <div className="from-moonstone-900 to-moonstone-700 h-screen bg-gradient-to-b">
+      <Container>
+        <SectionIntro
+          title="Our Success Stories"
+          className="mt-24 sm:mt-32 lg:mt-40"
+        >
+          <p className="text-moonstone-300 text-lg">
+            Explore our portfolio of successful projects and see how we've
+            helped businesses like yours achieve their goals.
+          </p>
+        </SectionIntro>
+        <FadeInStagger className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
+            <FadeIn key={caseStudy.href} className="overflow-hidden rounded-xl">
+              <article className="hover:bg-mustard-800 relative h-full bg-white p-6 shadow-lg transition sm:p-8">
+                <Link href={caseStudy.href}>
+                  <div className="flex ">
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="h-16 w-16"
+                      className="h-12 w-12 sm:h-16 sm:w-16"
                       unoptimized
                     />
-                  </Link>
-                </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Case study</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
-                <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
-                </p>
+                  </div>
+                </Link>
+                <div className="mt-6">
+                  <p className="flex gap-x-2 text-xs text-neutral-950 sm:text-sm">
+                    <time
+                      dateTime={caseStudy.date.split('-')[0]}
+                      className="font-semibold"
+                    >
+                      {caseStudy.date.split('-')[0]}
+                    </time>
+                    <span className="text-neutral-300" aria-hidden="true">
+                      /
+                    </span>
+                    <span>Case study</span>
+                  </p>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-neutral-950 sm:mt-3 sm:text-2xl">
+                    {caseStudy.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-normal text-neutral-600 sm:mt-4 sm:text-base">
+                    {caseStudy.description}
+                  </p>
+                </div>
               </article>
             </FadeIn>
           ))}
         </FadeInStagger>
       </Container>
-    </>
+    </div>
   )
 }
-
 function Services() {
   return (
     <>
-      <SectionIntro
-        eyebrow="Services"
-        title="Optimizing Your Online Impact"
-        className="mt-24 sm:mt-32 lg:mt-40"
-      >
-        <p>
-          We're not just building websites; we're crafting the digital gateways
-          that connect your business to the world. Our services are designed to
-          boost your online presence and drive growth, all tailored to the
-          unique needs of creators and entrepreneurs.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <div className="lg:flex lg:items-center lg:justify-end">
-          <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-            <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-              <StylizedImage
-                src={imageLaptop}
-                sizes="(min-width: 1024px) 41rem, 31rem"
-                className="justify-center lg:justify-end"
-              />
-            </FadeIn>
+      <div className="from-moonstone-900 to-moonstone-700 h-screen bg-gradient-to-b">
+        <SectionIntro
+          eyebrow="Services"
+          title="Optimizing Your Online Impact"
+          className="mt-24 sm:mt-32 lg:mt-40"
+        >
+          <p>
+            We're not just building websites; we're crafting the digital
+            gateways that connect your business to the world. Our services are
+            designed to boost your online presence and drive growth, all
+            tailored to the unique needs of creators and entrepreneurs.
+          </p>
+        </SectionIntro>
+        <Container className="mt-16">
+          <div className="lg:flex lg:items-center lg:justify-end">
+            <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
+              <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+                <StylizedImage
+                  src={imageLaptop}
+                  sizes="(min-width: 1024px) 41rem, 31rem"
+                  className="justify-center lg:justify-end"
+                />
+              </FadeIn>
+            </div>
+            <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
+              <ListItem title="Web development">
+                We specialize in designing high-quality, visually stunning
+                marketing pages tailored to your brand's unique identity. Our
+                approach ensures that each website serves as a dynamic,
+                customizable platform ready to engage your audience.
+              </ListItem>
+              <ListItem title="Application development">
+                Our skilled team excels in creating robust applications using
+                advanced frameworks to deliver fully customizable and scalable
+                solutions. We focus on flexibility to ensure your app evolves
+                with your business needs.
+              </ListItem>
+              <ListItem title="E-commerce">
+                We empower your business with fully customizable e-commerce
+                solutions that adapt to your specific requirements. Enhance your
+                online store’s functionality and user experience to exceed sales
+                targets and grow your customer base.
+              </ListItem>
+              <ListItem title="Custom content management">
+                Understanding the critical role of adaptable content, we provide
+                powerful, customized content management systems (CMS) that
+                streamline content creation and distribution, ensuring your
+                message resonates with your audience.
+              </ListItem>
+            </List>
           </div>
-          <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Web development">
-              We specialize in designing high-quality, visually stunning
-              marketing pages tailored to your brand's unique identity. Our
-              approach ensures that each website serves as a dynamic,
-              customizable platform ready to engage your audience.
-            </ListItem>
-            <ListItem title="Application development">
-              Our skilled team excels in creating robust applications using
-              advanced frameworks to deliver fully customizable and scalable
-              solutions. We focus on flexibility to ensure your app evolves with
-              your business needs.
-            </ListItem>
-            <ListItem title="E-commerce">
-              We empower your business with fully customizable e-commerce
-              solutions that adapt to your specific requirements. Enhance your
-              online store’s functionality and user experience to exceed sales
-              targets and grow your customer base.
-            </ListItem>
-            <ListItem title="Custom content management">
-              Understanding the critical role of adaptable content, we provide
-              powerful, customized content management systems (CMS) that
-              streamline content creation and distribution, ensuring your
-              message resonates with your audience.
-            </ListItem>
-          </List>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </>
   )
 }
@@ -189,7 +190,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
+      <Container className="mt-24 h-screen sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
             Transforming Your Digital Presence.
@@ -203,9 +204,9 @@ export default async function Home() {
         </FadeIn>
       </Container>
 
-      <Clients />
-      {/* 
-      <CaseStudies caseStudies={caseStudies} /> */}
+      {/* <Clients /> */}
+
+      <CaseStudies caseStudies={caseStudies} />
 
       {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
