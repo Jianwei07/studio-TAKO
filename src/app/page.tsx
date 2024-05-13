@@ -67,13 +67,13 @@ function CaseStudies({
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
-    <div className="from-moonstone-900 to-moonstone-700 h-screen bg-gradient-to-b">
+    <div className="h-screen">
       <Container>
         <SectionIntro
           title="Our Success Stories"
           className="mt-24 sm:mt-32 lg:mt-40"
         >
-          <p className="text-moonstone-300 text-lg">
+          <p className="text-lg">
             Explore our portfolio of successful projects and see how we've
             helped businesses like yours achieve their goals.
           </p>
@@ -81,9 +81,9 @@ function CaseStudies({
         <FadeInStagger className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="overflow-hidden rounded-xl">
-              <article className="hover:bg-mustard-800 relative h-full bg-white p-6 shadow-lg transition sm:p-8">
+              <article className="bg-alabaster-500 hover:bg-alabaster-700 relative h-full p-6 transition sm:p-8">
                 <Link href={caseStudy.href}>
-                  <div className="flex ">
+                  <div className="flex">
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
@@ -93,22 +93,25 @@ function CaseStudies({
                   </div>
                 </Link>
                 <div className="mt-6">
-                  <p className="flex gap-x-2 text-xs text-neutral-950 sm:text-sm">
+                  <p className="flex gap-x-2 text-xs text-neutral-950 transition group-hover:text-neutral-200 sm:text-sm">
                     <time
                       dateTime={caseStudy.date.split('-')[0]}
                       className="font-semibold"
                     >
                       {caseStudy.date.split('-')[0]}
                     </time>
-                    <span className="text-neutral-300" aria-hidden="true">
+                    <span
+                      className="text-neutral-300 transition group-hover:text-neutral-400"
+                      aria-hidden="true"
+                    >
                       /
                     </span>
                     <span>Case study</span>
                   </p>
-                  <h3 className="mt-2 font-display text-xl font-semibold text-neutral-950 sm:mt-3 sm:text-2xl">
+                  <h3 className="mt-2 font-display text-xl font-semibold text-neutral-950 transition group-hover:text-neutral-200 sm:mt-3 sm:text-2xl">
                     {caseStudy.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-normal text-neutral-600 sm:mt-4 sm:text-base">
+                  <p className="mt-2 text-sm leading-normal text-neutral-600 transition group-hover:text-neutral-300 sm:mt-4 sm:text-base">
                     {caseStudy.description}
                   </p>
                 </div>
@@ -116,14 +119,22 @@ function CaseStudies({
             </FadeIn>
           ))}
         </FadeInStagger>
+        <div className="mt-8 flex justify-end">
+          <Link href="/case-studies">
+            <button className="bg-alabaster-700 hover:bg-alabaster-600 rounded-lg px-6 py-3 text-base font-semibold text-neutral-950 transition">
+              View More
+            </button>
+          </Link>
+        </div>
       </Container>
     </div>
   )
 }
+
 function Services() {
   return (
     <>
-      <div className="from-moonstone-900 to-moonstone-700 h-screen bg-gradient-to-b">
+      <div className="h-screen bg-gradient-to-b from-moonstone-900 to-moonstone-700">
         <SectionIntro
           eyebrow="Services"
           title="Optimizing Your Online Impact"
