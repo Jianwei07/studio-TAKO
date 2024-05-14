@@ -67,7 +67,7 @@ function CaseStudies({
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-ghost-white-900">
       <Container>
         <SectionIntro
           title="Our Success Stories"
@@ -81,7 +81,7 @@ function CaseStudies({
         <FadeInStagger className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="overflow-hidden rounded-xl">
-              <article className="bg-alabaster-500 hover:bg-alabaster-700 relative h-full p-6 transition sm:p-8">
+              <article className="relative h-full bg-alabaster-500 p-6 transition hover:bg-alabaster-700 sm:p-8">
                 <Link href={caseStudy.href}>
                   <div className="flex">
                     <Image
@@ -121,7 +121,7 @@ function CaseStudies({
         </FadeInStagger>
         <div className="mt-8 flex justify-end">
           <Link href="/case-studies">
-            <button className="bg-alabaster-700 hover:bg-alabaster-600 rounded-lg px-6 py-3 text-base font-semibold text-neutral-950 transition">
+            <button className="rounded-lg bg-alabaster-700 px-6 py-3 text-base font-semibold text-neutral-950 transition hover:bg-alabaster-600">
               View More
             </button>
           </Link>
@@ -134,7 +134,7 @@ function CaseStudies({
 function Services() {
   return (
     <>
-      <div className="h-screen bg-gradient-to-b from-moonstone-900 to-moonstone-700">
+      <div className="from-moonstone-900 to-moonstone-700 bg-gradient-to-b">
         <SectionIntro
           eyebrow="Services"
           title="Optimizing Your Online Impact"

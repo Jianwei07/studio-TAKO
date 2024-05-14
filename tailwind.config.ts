@@ -41,7 +41,7 @@ export default {
           800: '#aeaea7',
           900: '#d6d6d3',
         },
-        burnt_sienna: {
+        sienna: {
           DEFAULT: '#cc785c',
           100: '#2d160e',
           200: '#5a2c1c',
