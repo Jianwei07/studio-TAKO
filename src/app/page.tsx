@@ -67,18 +67,15 @@ function CaseStudies({
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
-    <div className="h-screen bg-ghost-white-900">
+    <div className="bg-ghost-white-900 py-24 sm:py-32 lg:py-40">
       <Container>
-        <SectionIntro
-          title="Our Success Stories"
-          className="mt-24 sm:mt-32 lg:mt-40"
-        >
-          <p className="text-lg">
+        <SectionIntro title="Our Success Stories" className="mb-16">
+          <p>
             Explore our portfolio of successful projects and see how we've
             helped businesses like yours achieve their goals.
           </p>
         </SectionIntro>
-        <FadeInStagger className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <FadeInStagger className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="overflow-hidden rounded-xl">
               <article className="relative h-full bg-alabaster-500 p-6 transition hover:bg-alabaster-700 sm:p-8">
@@ -119,9 +116,9 @@ function CaseStudies({
             </FadeIn>
           ))}
         </FadeInStagger>
-        <div className="mt-8 flex justify-end">
-          <Link href="/case-studies">
-            <button className="rounded-lg bg-alabaster-700 px-6 py-3 text-base font-semibold text-neutral-950 transition hover:bg-alabaster-600">
+        <div className="mt-12 flex justify-center">
+          <Link href="/work">
+            <button className="rounded-lg bg-alabaster-700 px-8 py-4 text-base font-semibold text-neutral-950 transition hover:bg-alabaster-600">
               View More
             </button>
           </Link>
@@ -200,8 +197,8 @@ export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
-    <>
-      <Container className="mt-24 h-screen sm:mt-32 md:mt-56">
+    <div className="min-h-screen">
+      <Container className="pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
             Transforming Your Digital Presence.
@@ -224,13 +221,13 @@ export default async function Home() {
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
         The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
+        finding a way to access the user's microphone without triggering one of
         those annoying permission dialogs.
       </Testimonial> */}
 
       <Services />
 
       <ContactSection />
-    </>
+    </div>
   )
 }

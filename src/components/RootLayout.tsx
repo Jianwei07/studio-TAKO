@@ -59,20 +59,6 @@ function Header({
   invert?: boolean
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setMobileMenuVisible(false)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   return (
     <Container>
@@ -94,15 +80,10 @@ function Header({
             filled={logoHovered}
           />
         </Link>
-        <div
-          className={clsx(
-            'items-center gap-x-8 transition-all duration-300 lg:flex',
-            mobileMenuVisible ? 'flex' : 'hidden',
-          )}
-        >
+        <div className="hidden items-center gap-x-8 lg:flex">
           <Link
             href="/work"
-            className="hover:text-sienna-500 text-lg font-medium text-neutral-900"
+            className="hover:text-sienna-400 text-lg font-medium text-neutral-900"
           >
             Our Work
           </Link>
@@ -119,10 +100,10 @@ function Header({
             Our Process
           </Link>
           <Link
-            href="/project"
+            href="/blog"
             className="hover:text-sienna-500 text-lg font-medium text-neutral-900"
           >
-            Project Showcase
+            Blog
           </Link>
           <Button href="/contact" invert={invert}>
             Contact us
@@ -132,8 +113,8 @@ function Header({
           <button
             ref={toggleRef}
             type="button"
-            onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
-            aria-expanded={mobileMenuVisible ? 'true' : 'false'}
+            onClick={onToggle}
+            aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
               'group -m-2.5 rounded-full p-2.5 transition',
