@@ -27,6 +27,7 @@ export default {
           ['Mona Sans', ...defaultTheme.fontFamily.sans],
           { fontVariationSettings: '"wdth" 125' },
         ],
+        'league-spartan': ['League Spartan', ...defaultTheme.fontFamily.sans], // Add this line
       },
       colors: {
         jet: {

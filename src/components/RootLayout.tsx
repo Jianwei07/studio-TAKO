@@ -69,39 +69,37 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logomark
-            className="h-8 sm:hidden"
-            invert={invert}
-            filled={logoHovered}
-          />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
+          <div className="flex items-center">
+            <Logomark
+              preserveAspectRatio="xMinYMin meet"
+              // invert={invert}
+              // className="h-8 w-8"
+            />
+            <Logo className="hidden h-6 sm:block" invert={invert} />
+          </div>
         </Link>
         <div className="hidden items-center gap-x-8 lg:flex">
           <Link
             href="/work"
-            className="hover:text-sienna-400 text-lg font-medium text-neutral-900"
+            className="text-lg font-medium text-neutral-900 hover:text-sienna-400"
           >
             Our Work
           </Link>
           <Link
             href="/about"
-            className="hover:text-sienna-500 text-lg font-medium text-neutral-900"
+            className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             About Us
           </Link>
           <Link
             href="/process"
-            className="hover:text-sienna-500 text-lg font-medium text-neutral-900"
+            className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             Our Process
           </Link>
           <Link
             href="/blog"
-            className="hover:text-sienna-500 text-lg font-medium text-neutral-900"
+            className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             Blog
           </Link>

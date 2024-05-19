@@ -1,10 +1,18 @@
 @tailwind base;
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Mona Sans';
   font-weight: 200 900;
   font-display: block;
   font-style: normal;
   font-stretch: 75% 125%;
-  src: url('../fonts/Inter.var.woff2') format('woff2');
+  src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  font-weight: 800;
+  font-display: block;
+  font-style: normal;
+  src: url('../fonts/league_spartan.var.woff2') format('woff2');
 }
