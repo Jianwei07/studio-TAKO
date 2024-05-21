@@ -8,7 +8,7 @@ export function Logomark({ invert = false, ...props }) {
     <div
       style={{
         position: 'relative',
-        width: '25%',
+        width: '22%',
         height: 'auto',
         filter: invert ? 'invert(1)' : 'none',
       }}
@@ -49,11 +49,11 @@ export function Logo({
       <span
         className={clsx(
           'font-league-spartan text-4xl font-extrabold',
-          invert ? 'text-white' : 'text-neutral-950',
+          invert ? 'text-white' : 'text-jet',
         )}
         style={{
           fontFamily: 'League Spartan, sans-serif',
-          letterSpacing: '-0.07em', // Add this line to reduce letter spacing
+          letterSpacing: '-0.08em', // Add this line to reduce letter spacing
         }}
       >
         tectonic labs
