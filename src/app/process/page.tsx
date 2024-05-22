@@ -14,6 +14,7 @@ import { TagList, TagListItem } from '@/components/TagList'
 import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
+import HeroImage from '@/images/hero/process.svg'
 
 function Section({
   title,
@@ -186,14 +187,7 @@ function Deliver() {
 
 function Values() {
   return (
-    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50">
-        <GridPattern
-          className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
-          yOffset={-270}
-        />
-      </div>
-
+    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">  
       <SectionIntro
         eyebrow="Our values"
         title="Balancing reliability and innovation"
@@ -245,16 +239,29 @@ export const metadata: Metadata = {
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
 
+import hero from '@/images/hero/process2.svg'
+
 export default function Process() {
   return (
     <>
-      <PageIntro eyebrow="Our process" title="How we work">
-        <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
-        </p>
-      </PageIntro>
+      <div className="flex flex-col lg:flex-row items-center justify-center mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="lg:w-1/2 lg:pr-8 flex justify-center lg:justify-start">
+          <div className="text-center lg:text-left">
+            <PageIntro eyebrow="Our process" title="How we work">
+              <p>
+                We believe in efficiency and maximizing our resources to provide the
+                best value to our clients. The primary way we do that is by re-using
+                the same five projects we’ve been developing for the past decade.
+              </p>
+            </PageIntro>
+          </div>
+        </div>
+        <FadeIn>
+          <div className="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <img src={hero.src} alt="Our process" className="w-full h-auto max-w-2xl relative lg:top-24 scale-" />
+          </div>
+        </FadeIn>
+      </div>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Discover />
@@ -266,5 +273,5 @@ export default function Process() {
 
       <ContactSection />
     </>
-  )
+  );
 }
