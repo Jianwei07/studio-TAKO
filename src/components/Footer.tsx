@@ -4,10 +4,11 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo, Logomark } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import { Button } from './Button'
 
 const navigation = [
   {
-    title: 'Solutions',
+    title: 'Projects',
     links: [
       { title: 'FamilyFund', href: '/work/family-fund' },
       { title: 'Unseal', href: '/work/unseal' },
@@ -35,20 +36,12 @@ const navigation = [
     title: 'Connect',
     links: socialMediaProfiles,
   },
-  {
-    title: 'Legal',
-    links: [
-      { title: 'Privacy Policy', href: '/legal/privacy-policy' },
-      { title: 'Usage Policy', href: '/legal/usage-policy' },
-      { title: 'Disclosure Policy', href: '/legal/disclosure-policy' },
-    ],
-  },
 ]
 
 function Navigation() {
   return (
     <nav>
-      <ul role="list" className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+      <ul role="list" className="grid grid-cols-2 gap-10 sm:grid-cols-3">
         {navigation.map((section, sectionIndex) => (
           <li key={sectionIndex}>
             <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
@@ -75,35 +68,84 @@ function Navigation() {
 
 export function Footer() {
   return (
-    <Container as="footer" className="mt-24 w-full sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <div className="flex justify-between">
-          <div className="flex flex-col items-center">
-            {/* Wrap Logomark and text in a column */}
-            <Logomark style={{ height: '60px' }} />
-            <p className="mt-2 text-sm text-neutral-700">
-              {/* Styling for the tagline */}
-              From Concept to Creation, Empowered by Technology
-            </p>
+    <div className="mt-16 sm:mt-24 lg:mt-32">
+      <Container as="footer" className="max-w-full bg-ghost-white-500">
+        <FadeIn>
+          <div className="flex flex-col justify-between py-12 lg:flex-row lg:py-16">
+            <div className="flex flex-col">
+              <Link href="/" aria-label="Home" className="flex">
+                <Logomark
+                  style={{ height: '40px' }}
+                  className="text-neutral-100"
+                />
+                <Logo className="m-1" />
+              </Link>
+              <p className="mt-4 text-sm text-jet">
+                From Concept to Creation, Empowered by Technology
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-2 gap-8 lg:mt-0">
+              <div>
+                <ul className="space-y-4">
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="border-b border-neutral-950/20 pb-1 text-sm text-neutral-700 transition hover:border-neutral-950 hover:text-neutral-950"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/join"
+                      className="border-b border-neutral-950/20 pb-1 text-sm text-neutral-700 transition hover:border-neutral-950 hover:text-neutral-950"
+                    >
+                      Join Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <Navigation />
+              </div>
+            </div>
           </div>
-          <div className="hidden items-center space-x-8 md:flex">
-            <Navigation />
+          <div className="border-t border-neutral-950/20 py-8">
+            <div className="flex flex-wrap items-center justify-between">
+              <p className="text-sm text-neutral-700">
+                © Tectonic Labs Pte Ltd. {new Date().getFullYear()}
+              </p>
+              <ul className="flex space-x-6 text-sm text-neutral-500">
+                <li>
+                  <Link
+                    href="/legal/privacy-policy"
+                    className="transition hover:text-neutral-950"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/legal/usage-policy"
+                    className="transition hover:text-neutral-950"
+                  >
+                    Usage Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/legal/disclosure-policy"
+                    className="transition hover:text-neutral-950"
+                  >
+                    Disclosure Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="items-center md:hidden">
-            <Navigation />
-          </div>
-        </div>
-        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
-          <Link href="/" aria-label="Home">
-            <Logo className="h-6" fillOnHover />{' '}
-            {/* Optionally adjust this as well */}
-          </Link>
-          <p className="text-sm text-neutral-700">
-            © Tectonic Labs Pte Ltd. {new Date().getFullYear()}
-          </p>
-        </div>
-      </FadeIn>
-    </Container>
+        </FadeIn>
+      </Container>
+    </div>
   )
 }
 

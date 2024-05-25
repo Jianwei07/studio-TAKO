@@ -54,6 +54,44 @@ function Section({
   )
 }
 
+function Culture() {
+  return (
+    <div className="mt-24 rounded-4xl bg-jet py-24 sm:mt-32 lg:mt-40 lg:py-32">
+      <SectionIntro
+        eyebrow="Our culture"
+        title="Collaborate, grow, and make an impact"
+        invert
+      >
+        <p>
+          We are a tight-knit team that values collaboration, continuous
+          learning, and making a meaningful difference through our work.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <GridList>
+          <GridListItem title="Teamwork" invert>
+            We believe in the power of collaboration and work together to
+            achieve our goals and deliver exceptional results.
+          </GridListItem>
+          <GridListItem title="Learning" invert>
+            We are committed to continuous learning and growth, staying
+            up-to-date with the latest technologies and industry trends.
+          </GridListItem>
+          <GridListItem title="Balance" invert>
+            We strive to maintain a healthy work-life balance, recognizing that
+            personal well-being is essential for long-term success.
+          </GridListItem>
+          <GridListItem title="Purpose" invert>
+            We are driven by our purpose to create innovative solutions that
+            make a positive impact on society, starting with Singaporeans and
+            expanding globally.
+          </GridListItem>
+        </GridList>
+      </Container>
+    </div>
+  )
+}
+
 function Discover() {
   return (
     <Section title="Discover" image={{ src: imageWhiteboard }}>
@@ -61,26 +99,27 @@ function Discover() {
         <p>
           We work closely with our clients to understand their{' '}
           <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          goals, collaborating with their teams to gain deep insights into their
+          business processes and challenges.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          Our experienced consultants conduct thorough assessments, engaging
+          with stakeholders across various departments to gather comprehensive
+          information about the company's workflows, pain points, and
+          aspirations for growth.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          Once the discovery phase is complete, we analyze the findings and
+          develop a{' '}
+          <strong className="font-semibold text-neutral-950">
+            tailored solution
+          </strong>{' '}
+          that aligns with the client's objectives, leveraging cutting-edge AI
+          technologies to drive efficiency and productivity.
         </p>
       </div>
 
-      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
+      {/* <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
         Included in this phase
       </h3>
       <TagList className="mt-4">
@@ -90,151 +129,51 @@ function Discover() {
         <TagListItem>Employee surveys</TagListItem>
         <TagListItem>Proofs-of-concept</TagListItem>
         <TagListItem>Forensic audit</TagListItem>
-      </TagList>
+      </TagList> */}
     </Section>
   )
 }
 
-function Build() {
+function BuildAndDeliver() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Build & Deliver" image={{ src: imageMeeting, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          Our expert team collaborates closely with you to create tailored
+          software solutions that streamline your workflows and drive growth. We
+          leverage cutting-edge technologies and agile methodologies to ensure a
+          smooth and efficient development process.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
-        </p>
-        <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          Throughout the build phase, we maintain open communication, providing
+          regular updates and incorporating your feedback. Upon delivery, we
+          provide comprehensive training and support to ensure you can fully
+          leverage your new software solution.
         </p>
       </div>
-
-      <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
-        className="mt-12"
-      >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
-      </Blockquote>
-    </Section>
-  )
-}
-
-function Deliver() {
-  return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
-      <div className="space-y-6 text-base text-neutral-600">
-        <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
-        </p>
-        <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
-        </p>
-        <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
-        </p>
-      </div>
-
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Key aspects of our Build & Deliver process
       </h3>
       <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
+        <ListItem title="Collaborative Development">
+          We work hand-in-hand with you to ensure your software solution meets
+          your specific requirements.
         </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
+        <ListItem title="Cutting-Edge Technologies">
+          We leverage the latest tools and frameworks to build robust and
+          innovative solutions.
         </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
+        <ListItem title="Seamless Deployment & Support">
+          We handle the deployment process and provide ongoing support for
+          smooth operation.
         </ListItem>
       </List>
     </Section>
   )
 }
 
-function Values() {
-  return (
-    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">  
-      <SectionIntro
-        eyebrow="Our values"
-        title="Balancing reliability and innovation"
-      >
-        <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
-        </p>
-      </SectionIntro>
-
-      <Container className="mt-24">
-        <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
-          </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
-          </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
-          </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
-          </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
-          </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
-          </GridListItem>
-        </GridList>
-      </Container>
-    </div>
-  )
-}
-
 export const metadata: Metadata = {
-  title: 'Our Process',
+  title: 'About',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
@@ -244,34 +183,183 @@ import hero from '@/images/hero/process2.svg'
 export default function Process() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-center mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="lg:w-1/2 lg:pr-8 flex justify-center lg:justify-start">
-          <div className="text-center lg:text-left">
-            <PageIntro eyebrow="Our process" title="How we work">
-              <p>
-                We believe in efficiency and maximizing our resources to provide the
-                best value to our clients. The primary way we do that is by re-using
-                the same five projects we’ve been developing for the past decade.
-              </p>
-            </PageIntro>
-          </div>
-        </div>
-        <FadeIn>
-          <div className="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
-            <img src={hero.src} alt="Our process" className="w-full h-auto max-w-2xl relative lg:top-24 scale-" />
-          </div>
-        </FadeIn>
+      <div className="bg-ghost relative mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20">
+        <SectionIntro
+          eyebrow="Our values"
+          title="Balancing reliability and innovation"
+        >
+          <p>
+            At Tectonic Labs, we strive to strike a perfect balance between
+            leveraging cutting-edge technologies and maintaining a rock-solid
+            foundation. Our values guide us in delivering innovative solutions
+            that meet our clients' unique needs while ensuring reliability and
+            efficiency.
+          </p>
+        </SectionIntro>
+        <Container className="mt-12">
+          <GridList>
+            <GridListItem title="Quality">
+              We are committed to delivering high-quality software solutions
+              that exceed our clients' expectations.
+            </GridListItem>
+            <GridListItem title="Efficiency">
+              Our streamlined processes and agile methodologies enable us to
+              deliver projects on time and within budget.
+            </GridListItem>
+            <GridListItem title="Adaptability">
+              We understand that every business is unique, and we tailor our
+              solutions to meet your specific requirements.
+            </GridListItem>
+            <GridListItem title="Transparency">
+              We maintain open and honest communication with our clients
+              throughout the development process.
+            </GridListItem>
+            <GridListItem title="Partnership">
+              We view our clients as long-term partners and are committed to
+              their success beyond project delivery.
+            </GridListItem>
+            <GridListItem title="Continuous Improvement">
+              We constantly explore new technologies and methodologies to
+              enhance our solutions and services.
+            </GridListItem>
+          </GridList>
+        </Container>
       </div>
-
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
+        <Culture />
         <Discover />
-        <Build />
-        <Deliver />
+        <BuildAndDeliver />
       </div>
-
-      <Values />
-
-      <ContactSection />
     </>
-  );
+  )
 }
+
+// function Build() {
+//   return (
+//     <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+//       <div className="space-y-6 text-base text-neutral-600">
+//         <p>
+//           With a clear roadmap in place, our expert team of developers and AI
+//           specialists collaborate to bring your solution to life. We leverage
+//           cutting-edge technologies and agile methodologies to ensure a smooth
+//           and efficient development process.
+//         </p>
+//         <p>
+//           Throughout the build phase, we maintain open lines of communication,
+//           providing regular updates and incorporating your feedback. Our goal is
+//           to deliver a high-quality, scalable, and user-friendly AI solution
+//           that meets your unique business needs.
+//         </p>
+//       </div>
+//       {/* <Blockquote
+//         author={{ name: 'Samantha Lee', role: 'CTO of TechWave' }}
+//         className="mt-12"
+//       >
+//         Tectonic Labs' expertise and commitment to delivering exceptional modern
+//         software solutions exceeded our expectations. Their transparent and
+//         collaborative approach made the development process a breeze.
+//       </Blockquote> */}
+//     </Section>
+//   )
+// }
+
+// function Deliver() {
+//   return (
+//     <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+//       <div className="space-y-6 text-base text-neutral-600">
+//         <p>
+//           About halfway through the Build phase, we push each project out by 6
+//           weeks due to a change in{' '}
+//           <strong className="font-semibold text-neutral-950">
+//             requirements
+//           </strong>
+//           . This allows us to increase the budget a final time before launch.
+//         </p>
+//         <p>
+//           Despite largely using pre-built components, most of the{' '}
+//           <strong className="font-semibold text-neutral-950">progress</strong>{' '}
+//           on each project takes place in the final 24 hours. The development
+//           time allocated to each client is actually spent making augmented
+//           reality demos that go viral on social media.
+//         </p>
+//         <p>
+//           We ensure that the main pages of the site are{' '}
+//           <strong className="font-semibold text-neutral-950">
+//             fully functional
+//           </strong>{' '}
+//           at launch — the auxiliary pages will, of course, be lorem ipusm shells
+//           which get updated as part of our exorbitant{' '}
+//           <strong className="font-semibold text-neutral-950">
+//             maintenance
+//           </strong>{' '}
+//           retainer.
+//         </p>
+//       </div>
+
+//       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
+//         Included in this phase
+//       </h3>
+//       <List className="mt-8">
+//         <ListItem title="Testing">
+//           Our projects always have 100% test coverage, which would be impressive
+//           if our tests weren’t as porous as a sieve.
+//         </ListItem>
+//         <ListItem title="Infrastructure">
+//           To ensure reliability we only use the best Digital Ocean droplets that
+//           $4 a month can buy.
+//         </ListItem>
+//         <ListItem title="Support">
+//           Because we hold the API keys for every critical service your business
+//           uses, you can expect a lifetime of support, and invoices, from us.
+//         </ListItem>
+//       </List>
+//     </Section>
+//   )
+// }
+
+// function Values() {
+//   return (
+//     <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
+//       <SectionIntro
+//         eyebrow="Our values"
+//         title="Balancing reliability and innovation"
+//       >
+//         <p>
+//           At Tectonic Labs, we strive to strike a perfect balance between
+//           leveraging cutting-edge technologies and maintaining a rock-solid
+//           foundation. Our values guide us in delivering innovative solutions
+//           that meet our clients' unique needs while ensuring reliability and
+//           efficiency.
+//         </p>
+//       </SectionIntro>
+//       <Container className="mt-24">
+//         <GridList>
+//           <GridListItem title="Quality">
+//             We are committed to delivering high-quality software solutions that
+//             exceed our clients' expectations.
+//           </GridListItem>
+//           <GridListItem title="Efficiency">
+//             Our streamlined processes and agile methodologies enable us to
+//             deliver projects on time and within budget.
+//           </GridListItem>
+//           <GridListItem title="Adaptability">
+//             We understand that every business is unique, and we tailor our
+//             solutions to meet your specific requirements.
+//           </GridListItem>
+//           <GridListItem title="Transparency">
+//             We maintain open and honest communication with our clients
+//             throughout the development process.
+//           </GridListItem>
+//           <GridListItem title="Partnership">
+//             We view our clients as long-term partners and are committed to their
+//             success beyond project delivery.
+//           </GridListItem>
+//           <GridListItem title="Continuous Improvement">
+//             We constantly explore new technologies and methodologies to enhance
+//             our solutions and services.
+//           </GridListItem>
+//         </GridList>
+//       </Container>
+//     </div>
+//   )
+// }
