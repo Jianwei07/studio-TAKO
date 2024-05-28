@@ -85,17 +85,17 @@ function Header({
           >
             Our Work
           </Link>
-          <Link
+          {/* <Link
             href="/about"
             className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             About Us
-          </Link>
+          </Link> */}
           <Link
             href="/process"
             className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
-            Our Process
+            Company
           </Link>
           <Link
             href="/blog"
