@@ -8,7 +8,7 @@ export function Logomark({ invert = false, ...props }) {
     <div
       style={{
         position: 'relative',
-        width: '22%',
+        width: '20%',
         height: 'auto',
         filter: invert ? 'invert(1)' : 'none',
       }}

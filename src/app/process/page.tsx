@@ -239,7 +239,7 @@ export const metadata: Metadata = {
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
 
-import hero from '@/images/hero/process2.svg'
+import hero from '@/images/hero/process-gray.svg'
 
 export default function Process() {
   return (
