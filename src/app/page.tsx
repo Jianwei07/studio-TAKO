@@ -200,7 +200,7 @@ export default async function Home() {
     <div className="min-h-screen">
       <Container className="pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl gradient-text">
             Transforming Your Digital Presence.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">

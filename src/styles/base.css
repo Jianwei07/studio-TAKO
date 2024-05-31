@@ -16,3 +16,23 @@
   font-style: normal;
   src: url('../fonts/league_spartan.var.woff2') format('woff2');
 }
+
+.gradient-text{
+  /* Please change the colours here if you want to change the gradient colours -Isaac*/
+  background: linear-gradient(to right, #FF5F6D,pink,#FFC371);
+  background-size: 200% 200%;
+  animation: rainbow 3s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip:text;
+  transition: color .2s ease-in-out;
+}
+
+.gradient-text:hover{
+  color:rgba(0,0,0,0);
+}
+
+@keyframes rainbow { 
+  0%{background-position:left}
+  50%{background-position:right}
+  100%{background-position:left}
+}
