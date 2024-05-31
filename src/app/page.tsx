@@ -193,22 +193,29 @@ export const metadata: Metadata = {
     'We are a development studio working at the intersection of design and technology.',
 }
 
+import hero from "../images/hero/technology.svg"
+
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
     <div className="min-h-screen">
-      <Container className="pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56">
-        <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl gradient-text">
-            Transforming Your Digital Presence.
-          </h1>
-          <p className="mt-6 text-xl text-neutral-600">
-            From dynamic e-commerce sites to professional freelancer portfolios,
-            our Singapore-based team empowers SMEs and freelancers with top-tier
-            web development services. Let us help you enhance and expand your
-            digital presence with solutions designed to grow with your business.
-          </p>
+      <Container className="pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56 hero">
+        <FadeIn className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto">
+          <div className="flex-1">
+            <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+              <span className='gradient-text'>Transforming Your Digital Presence.</span>
+            </h1>
+            <p className="mt-6 text-xl text-neutral-600 md:max-w-prose">
+              From dynamic e-commerce sites to professional freelancer portfolios,
+              our Singapore-based team empowers SMEs and freelancers with top-tier
+              web development services. Let us help you enhance and expand your
+              digital presence with solutions designed to grow with your business.
+            </p>
+          </div>
+          <div className="hidden md:block flex-shrink-0 mt-6 md:mt-0">
+            <Image src={hero} alt="Descriptive Alt Text" className="w-64 h-auto scale-[1.4]" />
+          </div>
         </FadeIn>
       </Container>
 
