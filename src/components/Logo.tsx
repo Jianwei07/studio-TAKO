@@ -53,7 +53,7 @@ export function Logo({
         )}
         style={{
           fontFamily: 'League Spartan, sans-serif',
-          letterSpacing: '-0.08em', // Add this line to reduce letter spacing
+          letterSpacing: '-0.06em', // Add this line to reduce letter spacing
         }}
       >
         tectonic labs
