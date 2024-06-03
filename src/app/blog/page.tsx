@@ -82,8 +82,6 @@ export default async function Blog() {
           ))}
         </div>
       </Container>
-
-      <ContactSection />
     </>
   )
 }

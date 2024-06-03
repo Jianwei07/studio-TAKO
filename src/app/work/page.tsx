@@ -169,8 +169,6 @@ export default async function Work() {
       </Testimonial>
 
       <Clients />
-
-      <ContactSection />
     </>
   )
 }
