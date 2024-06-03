@@ -193,28 +193,35 @@ export const metadata: Metadata = {
     'We are a development studio working at the intersection of design and technology.',
 }
 
-import hero from "../images/hero/technology.svg"
+import hero from '../images/hero/technology.svg'
 
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
     <div className="min-h-screen">
-      <Container className="pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56 hero">
-        <FadeIn className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto">
+      <Container className="hero pb-16 pt-24 sm:pb-24 sm:pt-32 md:pt-56">
+        <FadeIn className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between md:flex-row">
           <div className="flex-1">
             <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-              <span className='gradient-text'>Transforming Your Digital Presence.</span>
+              <span className="gradient-text">
+                Transforming Your Digital Presence.
+              </span>
             </h1>
             <p className="mt-6 text-xl text-neutral-600 md:max-w-prose">
-              From dynamic e-commerce sites to professional freelancer portfolios,
-              our Singapore-based team empowers SMEs and freelancers with top-tier
-              web development services. Let us help you enhance and expand your
-              digital presence with solutions designed to grow with your business.
+              From dynamic e-commerce sites to professional freelancer
+              portfolios, our Singapore-based team empowers SMEs and freelancers
+              with top-tier web development services. Let us help you enhance
+              and expand your digital presence with solutions designed to grow
+              with your business.
             </p>
           </div>
-          <div className="hidden md:block flex-shrink-0 mt-6 md:mt-0">
-            <Image src={hero} alt="Descriptive Alt Text" className="w-64 h-auto scale-[1.4]" />
+          <div className="mt-6 hidden flex-shrink-0 md:mt-0 md:block">
+            <Image
+              src={hero}
+              alt="Descriptive Alt Text"
+              className="h-auto w-64 scale-[1.4]"
+            />
           </div>
         </FadeIn>
       </Container>
@@ -233,8 +240,6 @@ export default async function Home() {
       </Testimonial> */}
 
       <Services />
-
-      <ContactSection />
     </div>
   )
 }
