@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useId } from 'react'
 import { type Metadata } from 'next'
 import Link from 'next/link'
@@ -148,7 +149,11 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
+      <PageIntro
+        eyebrow="Contact us"
+        title="Let’s work together"
+        description=""
+      >
         <p>We can’t wait to hear from you.</p>
       </PageIntro>
 
