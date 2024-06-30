@@ -5,7 +5,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { GridList, GridListItem } from '@/components/GridList'
-import { GridPattern } from '@/components/GridPattern'
+import { GridPattern } from '@/components/Gradientdiv'
 import { List, ListItem } from '@/components/List'
 import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
@@ -184,26 +184,35 @@ export default function Process() {
   return (
     <>
       <div className="bg-ghost relative mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20">
-        <div className="container mx-auto px-6 lg:px-8 py-16">
-          <div className="flex flex-col md:flex-row items-start md:items-center">
+        <div className="container mx-auto px-6 py-16 lg:px-8">
+          <div className="flex flex-col items-start md:flex-row md:items-center">
             <div className="flex-1">
               <SectionIntro
                 eyebrow="Our values"
                 title="Balancing reliability and innovation"
               >
-                <div className='wrapper'>
+                <div className="wrapper">
                   <p>
-                    At Tectonic Labs, we strive to strike a perfect balance between
-                    leveraging cutting-edge technologies and maintaining a rock-solid
-                    foundation. Our values guide us in delivering <a href="/work" className='text-sienna'>innovative solutions</a> 
-                    &nbsp;that meet our clients' unique needs while ensuring reliability and
-                    efficiency.
+                    At Tectonic Labs, we strive to strike a perfect balance
+                    between leveraging cutting-edge technologies and maintaining
+                    a rock-solid foundation. Our values guide us in delivering{' '}
+                    <a href="/work" className="text-sienna">
+                      innovative solutions
+                    </a>
+                    &nbsp;that meet our clients' unique needs while ensuring
+                    reliability and efficiency.
                   </p>
                 </div>
               </SectionIntro>
             </div>
-            <div className="hidden md:block flex-shrink-0 mt-6 md:mt-0 md:ml-12">
-              <Image src={hero} alt="" width={350} height={350} className='mt-8' />
+            <div className="mt-6 hidden flex-shrink-0 md:ml-12 md:mt-0 md:block">
+              <Image
+                src={hero}
+                alt=""
+                width={350}
+                height={350}
+                className="mt-8"
+              />
             </div>
           </div>
         </div>

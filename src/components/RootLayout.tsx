@@ -16,7 +16,6 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
-import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
@@ -92,7 +91,7 @@ function Header({
             About Us
           </Link> */}
           <Link
-            href="/process"
+            href="/company"
             className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             Company
@@ -171,7 +170,7 @@ function Navigation() {
         <NavigationItem href="/about">About Us</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
+        <NavigationItem href="/company">Our Process</NavigationItem>
         {/* <NavigationItem href="/project">Project Showcase</NavigationItem> */}
         <NavigationItem href="/blog">Blog</NavigationItem>
       </NavigationRow>
