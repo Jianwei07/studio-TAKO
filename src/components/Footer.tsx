@@ -10,9 +10,9 @@ const navigation = [
   {
     title: 'Projects',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'connectKind', href: '/work/connectKind' },
+      { title: 'Sure Catch', href: '/work/sure-catch' },
+      { title: 'PocketTrade', href: '/work/pocketTrade' },
+      { title: 'DMC Fishing', href: '/work/dmc-fishing' },
       {
         title: (
           <>
@@ -26,16 +26,16 @@ const navigation = [
   {
     title: 'Company',
     links: [
-      { title: 'Process', href: '/company' },
       { title: 'Our Work', href: '/work' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Process', href: '/company' },
+      /*       { title: 'Blog', href: '/blog' },
+       */ { title: 'Contact us', href: '/contact' },
     ],
   },
-  {
-    title: 'Connect',
-    links: socialMediaProfiles,
-  },
+  // {
+  //   title: 'Connect',
+  //   links: socialMediaProfiles,
+  // },
 ]
 
 function Navigation() {
@@ -86,7 +86,7 @@ export function Footer() {
               >
                 <Logomark
                   style={{ height: '40px' }}
-                  className="text-neutral-100"
+                  className="text-neutral-100 sm:hidden"
                 />
                 <Logo className="m-1" />
               </Link>

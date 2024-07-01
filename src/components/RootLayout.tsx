@@ -96,12 +96,12 @@ function Header({
           >
             Company
           </Link>
-          <Link
+          {/* <Link
             href="/blog"
             className="text-lg font-medium text-neutral-900 hover:text-sienna-500"
           >
             Blog
-          </Link>
+          </Link> */}
           <Button href="/contact" invert={invert}>
             Contact us
           </Button>

@@ -52,8 +52,6 @@ export default async function BlogArticleWrapper({
           pages={moreArticles}
         />
       )}
-
-      <ContactSection />
     </>
   )
 }

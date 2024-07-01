@@ -66,8 +66,6 @@ const CaseStudyLayout = async ({
             pages={moreCaseStudies}
           />
         )}
-
-        <ContactSection />
       </article>
     </>
   )

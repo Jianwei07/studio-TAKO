@@ -149,13 +149,15 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        eyebrow="Our Work"
+        title="Innovative Solutions for Modern Challenges"
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          We are a dynamic startup composed of young technology talents
+          dedicated to delivering value and impact through cutting-edge software
+          engineering. Our passion for innovation and excellence drives us to
+          create robust, scalable, and user-centric applications that exceed our
+          clients' expectations.
         </p>
       </PageIntro>
 
