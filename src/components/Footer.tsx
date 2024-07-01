@@ -109,7 +109,7 @@ export function Footer() {
               <p className="text-sm text-neutral-700">
                 © Tectonic Labs Pte Ltd. {new Date().getFullYear()}
               </p>
-              <ul className="mt-4 flex flex-col items-center space-y-2 text-sm text-neutral-500 lg:mt-0 lg:flex-row lg:space-x-6 lg:space-y-0">
+              {/* <ul className="mt-4 flex flex-col items-center space-y-2 text-sm text-neutral-500 lg:mt-0 lg:flex-row lg:space-x-6 lg:space-y-0">
                 <li>
                   <Link
                     href="/legal/privacy-policy"
@@ -137,7 +137,7 @@ export function Footer() {
                     Disclosure Policy
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </FadeIn>
