@@ -16,10 +16,11 @@ import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
 import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
 import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
 import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
+import logoPhobia from '@/images/clients/connectKind/logo-dark.svg'
 import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import MoreProjectsComingSoon from '@/components/MoreProjectsComingSoon'
 
 function CaseStudies({
   caseStudies,
@@ -97,7 +98,7 @@ function CaseStudies({
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
+  ['connectKind', logoPhobia],
   ['Family Fund', logoFamilyFund],
   ['Unseal', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
@@ -159,17 +160,16 @@ export default async function Work() {
       </PageIntro>
 
       <CaseStudies caseStudies={caseStudies} />
+      <MoreProjectsComingSoon />
 
-      <Testimonial
+      {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
         We approached <em className="text-jet">Tectonic Labs</em> because we
         loved their past work. They delivered something remarkably similar in
         record time.
-      </Testimonial>
-
-      <Clients />
+      </Testimonial> */}
     </>
   )
 }

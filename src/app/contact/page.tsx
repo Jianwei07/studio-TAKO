@@ -98,24 +98,19 @@ function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our office
+        Let's connect
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        We're digital-first but not digital-only. Should an in-person session be
-        necessary, our office is ready to welcome you.
+        We're digital-first but not digital-only. Should an in-person meeting be
+        necessary, we're happy to schedule a coffee chat or meet at a location
+        that is convenient for you.
       </p>
-
-      <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
-
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Email us
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-          {[
-            ['Careers', 'careers@studioagency.com'],
-            ['Press', 'press@studioagency.com'],
-          ].map(([label, email]) => (
+          {[['Support', 'support@tectoniclabs.co']].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
               <dd>
@@ -132,10 +127,10 @@ function ContactDetails() {
       </Border>
 
       <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
+        {/* <h2 className="font-display text-base font-semibold text-neutral-950">
           Follow us
         </h2>
-        <SocialMedia className="mt-6" />
+        <SocialMedia className="mt-6" /> */}
       </Border>
     </FadeIn>
   )

@@ -81,8 +81,6 @@ export default async function CaseStudyLayout({
           pages={moreCaseStudies}
         />
       )}
-
-      <ContactSection />
     </>
   )
 }

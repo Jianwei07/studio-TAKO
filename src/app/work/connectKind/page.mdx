@@ -1,0 +1,61 @@
+import logo from '@/images/clients/connectkind/logomark-dark.svg'
+import imageHero from './hero.jpg'
+
+export const caseStudy = {
+  client: 'ConnectKind',
+  title: 'Discover Deeper Connections',
+  description:
+    'ConnectKind is a dating app that matches users based on unique personality insights and shared interests, promoting meaningful and empathetic connections.',
+  summary: [
+    'ConnectKind is revolutionizing dating by focusing on emotional compatibility and shared life experiences. Users engage in an interactive onboarding experience that helps them discover their core values and interests, enhancing match accuracy and satisfaction.',
+    'We developed a sophisticated algorithm that analyzes user responses from a variety of interactive content, ensuring matches are based on genuine compatibility and mutual understanding.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023-06',
+  service: 'App development, Algorithm optimization',
+  testimonial: {
+    author: {
+      name: 'Jenny Wilson',
+      role: 'Chief Product Officer of ConnectKind',
+    },
+    content:
+      'Working with Studio transformed our approach, turning our app into a catalyst for genuine relationships. The new matching algorithm not only improves user satisfaction but also significantly decreases user churn.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+After identifying user dissatisfaction with superficial matches, ConnectKind reimagined the dating app experience to focus on deeper, more meaningful connections. The app features a unique onboarding process that uses interactive scenarios and psychologically informed questionnaires to gauge user personalities and values.
+
+## What we did
+
+<TagList>
+  <TagListItem>User Experience Design</TagListItem>
+  <TagListItem>Interactive Onboarding</TagListItem>
+  <TagListItem>Psychology-Based Matching Algorithm</TagListItem>
+  <TagListItem>Privacy-First Features</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{
+    name: 'Jenny Wilson',
+    role: 'Chief Product Officer of ConnectKind',
+  }}
+>
+  The insights from Studio have been instrumental in crafting an app that
+  resonates with our vision of creating meaningful relationships based on more
+  than just looks or location.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="30%" label="Increase in User Retention" />
+  <StatListItem value="90%" label="Match Satisfaction Rate" />
+  <StatListItem value="50%" label="Decrease in User Churn" />
+  <StatListItem value="4.5" label="App Store Rating" />
+</StatList>
