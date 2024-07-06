@@ -86,7 +86,7 @@ export function Footer() {
               >
                 <Logomark
                   style={{ height: '40px' }}
-                  className="text-neutral-100 sm:hidden md:flex lg:flex"
+                  className="hidden text-neutral-100 md:block"
                 />
                 <Logo className="m-1" />
               </Link>
