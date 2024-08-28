@@ -2,9 +2,10 @@ import clsx from 'clsx'
 
 import { Blockquote } from '@/components/Blockquote'
 import { Border } from '@/components/Border'
-import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { StatList, StatListItem } from '@/components/StatList'
 import { TagList, TagListItem } from '@/components/TagList'
+import Image from 'next/image'
+import { ImageGallery } from '@/components/ImageGallery'
 
 export const MDXComponents = {
   Blockquote({
@@ -13,19 +14,25 @@ export const MDXComponents = {
   }: React.ComponentPropsWithoutRef<typeof Blockquote>) {
     return <Blockquote className={clsx('my-32', className)} {...props} />
   },
+  ImageGallery({
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof ImageGallery>) {
+    return <ImageGallery {...props} />
+  },
   img: function Img({
     className,
     ...props
-  }: React.ComponentPropsWithoutRef<typeof GrayscaleTransitionImage>) {
+  }: React.ComponentPropsWithoutRef<typeof Image>) {
     return (
       <div
         className={clsx(
-          'group isolate my-10 overflow-hidden rounded-4xl bg-yellow-100 max-sm:-mx-6',
+          'my-10 overflow-hidden rounded-4xl bg-yellow-100 max-sm:-mx-6',
           className,
         )}
       >
-        <GrayscaleTransitionImage
+        <Image
           {...props}
+          alt={props.alt || 'Image'}
           sizes="(min-width: 768px) 42rem, 100vw"
           className="aspect-[16/10] w-full object-cover"
         />

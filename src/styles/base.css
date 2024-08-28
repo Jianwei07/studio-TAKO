@@ -17,25 +17,31 @@
   src: url('../fonts/league_spartan.var.woff2') format('woff2');
 }
 
-.gradient-text{
+.gradient-text {
   /* Please change the colours here if you want to change the gradient colours -Isaac*/
-  background: linear-gradient(to right, #FF5F6D,pink,#FFC371);
+  background: linear-gradient(to right, #ff5f6d, pink, #ffc371);
   background-size: 200% 200%;
   animation: rainbow 3s ease-in-out infinite;
   background-clip: text;
-  -webkit-background-clip:text;
-  transition: color .2s ease-in-out;
+  -webkit-background-clip: text;
+  transition: color 0.2s ease-in-out;
 }
 
-.gradient-text:hover{
-  color:rgba(0,0,0,0);
+.gradient-text:hover {
+  color: rgba(0, 0, 0, 0);
   cursor: default;
 }
 
-@keyframes rainbow { 
-  0%{background-position:left}
-  50%{background-position:right}
-  100%{background-position:left}
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .wrapper {
@@ -43,7 +49,6 @@
   box-sizing: border-box;
   line-height: 1.5;
 }
-
 
 .wrapper p {
   margin: 0;
@@ -64,7 +69,7 @@
   width: calc(100% - 8px);
   height: calc(100% - 6px);
   z-index: -1;
-  transition: .35s cubic-bezier(.25, .1, 0, 2.05);
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
 }
 
 .wrapper p a:hover::after {

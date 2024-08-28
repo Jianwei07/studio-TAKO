@@ -71,13 +71,19 @@ function Header({
           <div className="flex items-center">
             <Logomark
               preserveAspectRatio="xMinYMin meet"
-              // invert={invert}
-              // className="h-8 w-8"
+              invert={invert}
+              className="h-8 w-8"
             />
             <Logo className="hidden h-6 sm:block" invert={invert} />
           </div>
         </Link>
         <div className="hidden items-center gap-x-8 lg:flex">
+          <Link
+            href="/"
+            className="text-lg font-medium text-neutral-900 hover:text-sienna-400"
+          >
+            Home
+          </Link>
           <Link
             href="/work"
             className="text-lg font-medium text-neutral-900 hover:text-sienna-400"
@@ -166,6 +172,7 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
+        <NavigationItem href="/">Home</NavigationItem>
         <NavigationItem href="/work">Our Work</NavigationItem>
         <NavigationItem href="/about">About Us</NavigationItem>
       </NavigationRow>

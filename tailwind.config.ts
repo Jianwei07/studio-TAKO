@@ -25,7 +25,7 @@ export default {
         sans: ['League Spartan', ...defaultTheme.fontFamily.sans],
         display: [
           ['Inter', ...defaultTheme.fontFamily.sans],
-          { fontVariationSettings: '"wdth" 125' },
+          { fontVariationSettings: '"width" 125' },
         ],
         'league-spartan': ['League Spartan', ...defaultTheme.fontFamily.sans], // Add this line
       },

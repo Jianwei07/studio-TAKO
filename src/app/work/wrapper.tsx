@@ -1,11 +1,13 @@
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import Image from 'next/image'
+import { ImageGallery } from '@/components/ImageGallery'
+import React from 'react'
 
 export default async function CaseStudyLayout({
   caseStudy,
@@ -18,6 +20,16 @@ export default async function CaseStudyLayout({
   let moreCaseStudies = allCaseStudies
     .filter(({ metadata }) => metadata !== caseStudy)
     .slice(0, 2)
+
+  // Extract ImageGallery from children
+  const galleryChild = React.Children.toArray(children).find(
+    (child: any) => child?.type?.name === 'ImageGallery',
+  )
+
+  // Filter out ImageGallery from other children
+  const otherChildren = React.Children.toArray(children).filter(
+    (child: any) => child?.type?.name !== 'ImageGallery',
+  )
 
   return (
     <>
@@ -55,21 +67,27 @@ export default async function CaseStudyLayout({
 
             <div className="border-y border-neutral-200 bg-neutral-100">
               <div className="-my-px mx-auto max-w-[76rem] bg-neutral-200">
-                <GrayscaleTransitionImage
-                  {...caseStudy.image}
-                  quality={90}
-                  className="w-full"
-                  sizes="(min-width: 1216px) 76rem, 100vw"
-                  priority
-                />
+                {caseStudy.image && caseStudy.image.src && (
+                  <Image
+                    src={caseStudy.image.src}
+                    alt={caseStudy.image.alt || 'Case Study Image'}
+                    quality={90}
+                    className="w-full"
+                    sizes="(min-width: 1216px) 76rem, 100vw"
+                    priority
+                  />
+                )}
+                {/* Render ImageGallery here if it exists */}
+                {galleryChild && galleryChild}
               </div>
             </div>
           </FadeIn>
         </header>
 
+        {/* Render other content inside MDXComponents.wrapper */}
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
-            <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
+            <MDXComponents.wrapper>{otherChildren}</MDXComponents.wrapper>
           </FadeIn>
         </Container>
       </article>
