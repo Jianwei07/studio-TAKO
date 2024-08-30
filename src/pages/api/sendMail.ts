@@ -31,8 +31,8 @@ export default async function handler(
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
-      logger: true, // Enable logging
-      debug: true, // Enable debugging
+      logger: false, // Enable logging
+      debug: false, // Enable debugging
     })
 
     const mailOptions = {

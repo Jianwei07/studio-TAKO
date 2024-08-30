@@ -108,7 +108,7 @@ function ContactForm() {
   }
 
   const onSubmit = async (data: any) => {
-    console.log('Form data to be submitted:', data) // Debugging statement
+    // console.log('Form data to be submitted:', data) // Debugging statement
     setLoading(true)
     try {
       const response = await fetch('/api/sendMail', {
@@ -122,7 +122,7 @@ function ContactForm() {
         }),
       })
 
-      console.log('Response status:', response.status) // Debugging statement
+      // console.log('Response status:', response.status) // Debugging statement
 
       if (!response.ok) {
         throw new Error('Failed to send enquiry')
