@@ -25,6 +25,11 @@ async function loadEntries<T extends { date: string }>(
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 
+export type ImageData = {
+  src: string // Ensure the src is always a string for ImageData type
+  alt: string
+}
+
 export type MDXEntry<T> = T & { href: string; metadata: T }
 
 export interface Article {
@@ -54,6 +59,15 @@ export interface CaseStudy {
     }
     content: string
   }
+  imageGallery: Array<ImageData> // Change the type to ImageData[]
+}
+
+// Define the ImageGallery interface
+export interface ImageGallery {
+  date: string
+  title: string
+  images: Array<ImagePropsWithOptionalAlt>
+  description?: string
 }
 
 export function loadArticles() {
@@ -62,4 +76,9 @@ export function loadArticles() {
 
 export function loadCaseStudies() {
   return loadEntries<CaseStudy>('work', 'caseStudy')
+}
+
+// New function to load image galleries
+export function loadImageGalleries() {
+  return loadEntries<ImageGallery>('gallery', 'imageGallery')
 }

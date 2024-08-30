@@ -8,16 +8,16 @@ import Image from 'next/image'
 import { ImageGallery } from '@/components/ImageGallery'
 
 export const MDXComponents = {
+  ImageGallery({
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof ImageGallery>) {
+    return <ImageGallery {...props} />
+  },
   Blockquote({
     className,
     ...props
   }: React.ComponentPropsWithoutRef<typeof Blockquote>) {
     return <Blockquote className={clsx('my-32', className)} {...props} />
-  },
-  ImageGallery({
-    ...props
-  }: React.ComponentPropsWithoutRef<typeof ImageGallery>) {
-    return <ImageGallery {...props} />
   },
   img: function Img({
     className,

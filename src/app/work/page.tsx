@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { Blockquote } from '@/components/Blockquote'
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
-import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
@@ -13,6 +12,10 @@ import { Testimonial } from '@/components/Testimonial'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import MoreProjectsComingSoon from '@/components/MoreProjectsComingSoon'
+import logoStudentEcho from '@/images/clients/student-echo/logo.svg'
+import logoDMC from '@/images/clients/dmc-fishing/dmc-fishing-dark.png'
+import logoSureCatch from '@/images/clients/sure-catch/sure-catch-dark.svg'
+import logoPocketTrade from '@/images/clients/pocket/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
@@ -90,14 +93,10 @@ function CaseStudies({
 }
 
 // const clients = [
-//   ['connectKind', logoPhobia],
-//   ['Family Fund', logoFamilyFund],
-//   ['Unseal', logoUnseal],
-//   ['Mail Smirk', logoMailSmirk],
-//   ['Home Work', logoHomeWork],
-//   ['Green Life', logoGreenLife],
-//   ['Bright Path', logoBrightPath],
-//   ['North Adventures', logoNorthAdventures],
+//   ['Student Echo', logoStudentEcho],
+//   ['DMC Fishing', logoDMC],
+//   ['SureCatch', logoSureCatch],
+//   ['PocketTrade', logoPocketTrade],
 // ]
 
 // function Clients() {
@@ -115,10 +114,15 @@ function CaseStudies({
 //           className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
 //         >
 //           {clients.map(([client, logo]) => (
-//             <li key={client} className="group">
+//             <li key={client} className="group flex items-center justify-center">
 //               <FadeIn className="overflow-hidden">
-//                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-//                   <Image src={logo} alt={client} unoptimized />
+//                 <Border className="flex h-24 w-24 items-center justify-center rounded-md bg-white p-4 shadow-sm">
+//                   <Image
+//                     src={logo}
+//                     alt={client}
+//                     unoptimized
+//                     className="h-full w-full object-contain"
+//                   />
 //                 </Border>
 //               </FadeIn>
 //             </li>
@@ -152,7 +156,6 @@ export default async function Work() {
           clients' expectations.
         </p>
       </PageIntro>
-
       <CaseStudies caseStudies={caseStudies} />
       <MoreProjectsComingSoon />
 

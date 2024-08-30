@@ -1,8 +1,15 @@
-import heroImage from './hero.jpg'
-import homeImage from '@/images/clients/student-echo/home.png'
-import faqImage from '@/images/clients/student-echo/faq.png'
-import contactImage from '@/images/clients/student-echo/contact.png'
-import logoImage from '@/images/clients/student-echo/logo.png'
+import imageHero from './hero.jpg'
+import logo from '@/images/clients/student-echo/logo.svg'
+import imageHome from '@/images/clients/student-echo/home.png'
+import imageFaq from '@/images/clients/student-echo/faq.png'
+import imageContact from '@/images/clients/student-echo/contact.png'
+
+export const imageGallery = [
+  { src: imageHero, alt: 'Student Echo Hero Image' },
+  { src: imageHome, alt: 'Student Echo Home Page' },
+  { src: imageFaq, alt: 'Student Echo FAQ Page' },
+  { src: imageContact, alt: 'Student Echo Contact Page' },
+]
 
 export const caseStudy = {
   client: 'Student Echo by York City Management',
@@ -14,8 +21,8 @@ export const caseStudy = {
     "Implemented a headless CMS for seamless content management, reducing the client's operational workload and allowing rapid updates.",
     'Leveraged AWS cloud services, CDN, and edge locations to achieve exceptional website performance and low latency for users in both Singapore and the UK.',
   ],
-  logoImage,
-  image: { src: heroImage },
+  logo,
+  imageGallery,
   date: '2024-8',
   service:
     'Web Development, E-commerce Development, UX/UI Design, Digital Strategy',
@@ -31,34 +38,51 @@ export const metadata = {
   description: caseStudy.description,
 }
 
-<ImageGallery
-  images={[
-    { src: heroImage, alt: 'Property Hero Image' },
-    { src: homeImage, alt: 'Student Echo Home Page' },
-    { src: faqImage, alt: 'Student Echo FAQ Page' },
-    { src: contactImage, alt: 'Student Echo Contact Page' },
-  ]}
-/>
-## Overview{' '}
+## Overview
+
+Student Echo, a UK-based student accommodation provider, sought to establish a strong digital presence to attract students and streamline their property management processes. Our team was tasked with developing a comprehensive web solution that would not only showcase their properties but also provide an efficient platform for managing bookings and inquiries.
+
+[Visit the Student Echo website](http://www.studentecho.com/)
+
+## Our Approach
 
 ### Rapid Deployment
 
-- **8-Week Launch:** Delivered a fully functional website in just 8 weeks, enabling the client to quickly establish an online presence.
+We prioritized a swift launch to capitalize on the upcoming academic year:
+
+- **8-Week Turnaround**: Delivered a fully functional website in just two months.
+- **Agile Methodology**: Employed iterative development cycles to ensure continuous progress and flexibility.
 
 ### Streamlined Content Management
 
-- **Headless CMS Implementation:** Introduced a codeless method for property onboarding and offboarding, empowering the client to manage content effortlessly without technical assistance.
+To empower the client with easy content updates:
+
+- **Headless CMS Integration**: Implemented a user-friendly system for property listings management.
+- **Custom Dashboard**: Developed an intuitive interface for real-time updates and analytics.
 
 ### Enhanced Performance and Reach
 
-- **AWS Cloud Services Integration:** Used AWS services, including CDN and edge computing, to optimize loading times and ensure a seamless experience for global users.
+Leveraging cutting-edge technologies to ensure optimal user experience:
 
-### Improved Digital Presence
+- **AWS Cloud Services**: Utilized Amazon Web Services for robust, scalable hosting.
+- **CDN Implementation**: Employed Content Delivery Network to minimize latency for global users.
+- **Edge Computing**: Implemented serverless functions for faster data processing and improved responsiveness.
 
-- **Branding and Design:** Developed a modern logo and color palette that reflects the client's vision, improving brand consistency and appeal.
+## What we did
 
-<Blockquote author={caseStudy.testimonial.author}>
-  {caseStudy.testimonial.content}
+<TagList>
+  <TagListItem>Responsive Web Design</TagListItem>
+  <TagListItem>Headless CMS Implementation</TagListItem>
+  <TagListItem>Cloud-based Architecture</TagListItem>
+  <TagListItem>Custom Property Management System</TagListItem>
+  <TagListItem>SEO Optimization</TagListItem>
+</TagList>
+
+<Blockquote author={{ name: 'Miranda Lam', role: 'Owner of Student Echo' }}>
+  The team's approach to enhancing our digital presence has been outstanding.
+  They managed to deliver exactly what we needed in record time. The new website
+  has significantly improved our booking process and overall customer
+  engagement.
 </Blockquote>
 
 <StatList>
@@ -68,8 +92,16 @@ export const metadata = {
   <StatListItem value="4.9" label="Customer Satisfaction Score" />
 </StatList>
 
-## How We Made a Difference
+## Transforming Student Accommodation Booking
 
-By understanding the client's needs and leveraging the latest technologies, we transformed their digital landscape, helping them establish a strong online presence and achieve business goals more effectively.
+Student Echo now offers a seamless online platform for students to find and book accommodations in York. The website provides detailed property listings, virtual tours, and an easy-to-use booking system, making the process of finding student housing simple and efficient.
 
-[Visit the Student Echo website](http://www.studentecho.com/)
+## Key Features
+
+### Efficient Property Management
+
+The custom-built property management system allows Student Echo to easily update property listings, manage bookings, and communicate with tenants, all from a single dashboard.
+
+### User-Friendly Interface
+
+With a focus on user experience, the website offers intuitive navigation, advanced search filters, and mobile responsiveness, ensuring students can easily find their ideal accommodation from any device.

@@ -6,7 +6,7 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Studio',
+    template: '%s - tectonic Labs',
     default: 'Tectonic Labs: Building Human-Centric Software Solutions',
   },
 }

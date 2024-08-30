@@ -45,13 +45,20 @@
 }
 
 .wrapper {
-  width: 50vw;
+  width: auto; /* Remove fixed width to avoid affecting the ImageGallery layout */
+  max-width: 100%; /* Ensure it does not exceed the available width */
   box-sizing: border-box;
   line-height: 1.5;
 }
 
 .wrapper p {
   margin: 0;
+}
+
+.case-study-wrapper p a {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .wrapper p a {
